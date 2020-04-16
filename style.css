@@ -1,0 +1,16 @@
+html {
+    background-color: #155352;
+}
+
+@font-face {
+    font-family: qud1;
+    src: url(fonts/SourceCodePro-Regular.ttf);
+}
+
+h1 {
+    font-family: qud1;
+}
+
+p {
+    font-family: qud1;
+}
