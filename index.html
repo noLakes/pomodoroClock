@@ -5,11 +5,30 @@
         <meta charset="utf-8">
         <title>pomodoro clock</title>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     </head>
     
     <body>
-        <h1>pomodoro!</h1>
-        <p>lets make a pomodoro clock!</p>
+        <div id="main">
+            <div id="header">
+                <h1 id="title">pomodoro clock</h1>
+                <p id="author">by <span><a href="https://github.com/noLakes">noLakes</a></span></p>                
+            </div>
+
+            <div id="timerModes">
+                <button id="pomoButton">pomodoro</button>
+                <button id="shortBreakButton">short break</button>
+                <button id="longBreakButton">long break</button>    
+            </div>
+
+            <div id="timer">25:00</div>
+
+            <div id="transportButtons">
+                <button id="start"><span class="material-icons">play_arrow</span></button>
+                <button id="stop"><span class="material-icons">stop</span></button>
+                <button id="reset"><span class="material-icons">replay</span></button>
+            </div>
+        </div>
 
 
     </body>

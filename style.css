@@ -1,10 +1,14 @@
 html {
-    background-color: #155352;
+    background-color: #b1c9c3;
 }
 
 @font-face {
     font-family: qud1;
     src: url(fonts/SourceCodePro-Regular.ttf);
+}
+
+body {
+    margin: 0px;
 }
 
 h1 {
@@ -13,4 +17,68 @@ h1 {
 
 p {
     font-family: qud1;
+}
+
+#header {
+    position: relative;
+    background-color: #40a4b9; 
+}
+
+#title {
+    margin-top: 0px;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+}
+
+#author {
+    margin-top: 0px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#timerModes {
+    position: relative;
+    margin: auto;
+    padding-top: 20px;
+    text-align: center;
+    width: 500px;
+}
+
+#timerModes button {
+    margin: 0px;
+    width: 31%;
+    height: 30px;
+    font-family: qud1;
+    font-size: 12pt;
+}
+
+#timer {
+    position: relative;
+    margin: 20px auto 20px auto;
+    width: 25%;
+    text-align: center;
+    font-family: qud1;
+    font-size: 52pt;
+    align-content: center;
+}
+
+#transportButtons {
+    position: relative;
+    margin: auto;
+    padding-top: 20px;
+    text-align: center;
+    width: 25%;
+}
+
+#transportButtons button {
+    margin: 0px 5px;
+    width: 50px;
+    height: 50px;
+    font-size: 20pt;
 }
