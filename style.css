@@ -45,22 +45,29 @@ p {
 #timerModes {
     position: relative;
     margin: auto;
-    padding-top: 20px;
+    padding-top: 30px;
     text-align: center;
     width: 500px;
 }
 
 #timerModes button {
-    margin: 0px;
-    width: 31%;
-    height: 30px;
-    font-family: qud1;
-    font-size: 12pt;
+  background-color: #0096ff;
+  border: 1px solid black;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  font-family: qud1;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  float: left;
+  width: 33%;
 }
 
 #timer {
     position: relative;
-    margin: 20px auto 20px auto;
+    background-color: #77bfcf; 
+    margin: 80px auto 20px auto;
     width: 25%;
     text-align: center;
     font-family: qud1;
@@ -81,4 +88,5 @@ p {
     width: 50px;
     height: 50px;
     font-size: 20pt;
+    border: 1px solid black;
 }
