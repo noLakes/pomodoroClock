@@ -62,7 +62,17 @@ p {
   cursor: pointer;
   float: left;
   width: 33%;
+  transition-delay: 0.05s;
 }
+
+#timerModes button:hover {
+    background-color: #cfc041;
+}
+
+#timerModes button:active {
+    background-color: #0048bd;
+}
+
 
 #timer {
     position: relative;
@@ -89,4 +99,12 @@ p {
     height: 50px;
     font-size: 20pt;
     border: 1px solid black;
+}
+
+#transportButtons button:hover {
+    
+}
+
+#transportButtons button:active {
+    
 }
