@@ -5,6 +5,7 @@ const pomoButton = document.querySelector("#pomoButton");
 const shortBreakButton = document.querySelector("#shortBreakButton");
 const longBreakButton = document.querySelector("#longBreakButton");
 const timer = document.querySelector("#timer");
+const timerModes = document.querySelector("#timerModes");
 
 const pomoTime = [25]; 
 const shortBreakTime = [5];
@@ -12,46 +13,71 @@ const longBreakTime = [10];
 
 window.addEventListener('load', (event) => {
     start.addEventListener('click', function () {
-        timeToCount(pomoTime[0]);
+        if (timeLeft != null) {
+            timeToCount(timeLeft / 60000);
+        }
     });
 
     stop.addEventListener('click', function () {
-
+        if (clock != null) {
+            clearInterval(clock);
+        }
     });
 
     reset.addEventListener('click', function () {
-
+        if (lastCall != null) {
+            timeToCount(lastCall);
+        }
     });
 
     pomoButton.addEventListener('click', function() {
-
+        setActive(this);
+        timeToCount(pomoTime[0]);
+        lastCall = pomoTime[0];
     });
 
     shortBreakButton.addEventListener('click', function () {
-
+        setActive(this);
+        timeToCount(shortBreakTime[0]);
+        lastCall = shortBreakTime[0];
     });
 
     longBreakButton.addEventListener('click', function() {
-
+        setActive(this);
+        timeToCount(longBreakTime[0]);
+        lastCall = longBreakTime[0];
     });
 });
 
-let timeStart = new Date();
+let timeStart = null;
+let clock = null; 
+let timeLeft = null;
+let lastCall = null;
 
 function updateTime() {
     timeStart = new Date();
 }
 
 function timeToCount(min) {
+    if (clock != null) {clearTimer()};
     updateTime();
     timerText(min, 0);
-    let timer = setInterval(() => {
+    clock = setInterval(() => {
         let d = new Date();
         timerText(min, (d % timeStart));
         if ((d % timeStart) >= (min * 60000)) {
-            clearInterval(timer);
+            clearTimer();
         }
     }, 1000)
+}
+
+function clearTimer() {
+    if (clock != null) {
+        clearInterval(clock);
+        clearTimeout(clock);
+        clock = null;
+        timeLeft = null;
+    }
 }
 
 function timerText(targetTime, timeElapsed) {
@@ -61,6 +87,7 @@ function timerText(targetTime, timeElapsed) {
         timeToPrint = 0;
     }
     timer.textContent = msToMinSec(timeToPrint);
+    timeLeft = timeToPrint;
 }
 
 function msToMinSec(ms) {
@@ -68,6 +95,14 @@ function msToMinSec(ms) {
     let seconds = ((ms % 60000) / 1000).toFixed(0);
     return (seconds == 60 ? (minutes+1) + ":00" : minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
 }
+
+function setActive(x) {
+    pomoButton.style.backgroundColor = '#0096ff';
+    shortBreakButton.style.backgroundColor = '#0096ff';
+    longBreakButton.style.backgroundColor = '#0096ff';
+    x.style.backgroundColor = "#0048bd";
+}
+
 
 
 
