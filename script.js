@@ -13,14 +13,19 @@ const longBreakTime = [10];
 
 window.addEventListener('load', (event) => {
     start.addEventListener('click', function () {
-        if (timeLeft != null) {
+        if (timeLeft != null && stopped == true) {
             timeToCount(timeLeft / 60000);
+        }
+        else if (stopped == true && lastCall == null) {
+            setActive(pomoButton);
+            timeToCount(pomoTime[0]);
         }
     });
 
     stop.addEventListener('click', function () {
         if (clock != null) {
             clearInterval(clock);
+            stopped = true;
         }
     });
 
@@ -53,6 +58,7 @@ let timeStart = null;
 let clock = null; 
 let timeLeft = null;
 let lastCall = null;
+let stopped = true;
 
 function updateTime() {
     timeStart = new Date();
@@ -62,6 +68,7 @@ function timeToCount(min) {
     if (clock != null) {clearTimer()};
     updateTime();
     timerText(min, 0);
+    stopped = false;
     clock = setInterval(() => {
         let d = new Date();
         timerText(min, (d % timeStart));
@@ -77,6 +84,7 @@ function clearTimer() {
         clearTimeout(clock);
         clock = null;
         timeLeft = null;
+        stopped = true;
     }
 }
 
