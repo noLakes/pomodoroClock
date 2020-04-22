@@ -35,23 +35,29 @@ window.addEventListener('load', (event) => {
             timeToCount(lastCall);
         }
     });
-
+    
     pomoButton.addEventListener('click', function() {
-        setActive(this);
-        timeToCount(pomoTime[0]);
-        lastCall = pomoTime[0];
+        if (this.className != 'active') {
+            setActive(this);
+            timeToCount(pomoTime[0]);
+            lastCall = pomoTime[0];
+        }
     });
 
     shortBreakButton.addEventListener('click', function () {
-        setActive(this);
-        timeToCount(shortBreakTime[0]);
-        lastCall = shortBreakTime[0];
+        if (this.className != 'active') {
+            setActive(this);
+            timeToCount(shortBreakTime[0]);
+            lastCall = shortBreakTime[0];
+        }
     });
 
     longBreakButton.addEventListener('click', function() {
-        setActive(this);
-        timeToCount(longBreakTime[0]);
-        lastCall = longBreakTime[0];
+        if (this.className != 'active') {
+            setActive(this);
+            timeToCount(longBreakTime[0]);
+            lastCall = longBreakTime[0];
+        }
     });
 });
 
@@ -108,9 +114,13 @@ function msToMinSec(ms) {
 
 function setActive(x) {
     pomoButton.style.backgroundColor = '';
+    pomoButton.setAttribute('class', 'inactive');
     shortBreakButton.style.backgroundColor = '';
+    shortBreakButton.setAttribute('class', 'inactive');
     longBreakButton.style.backgroundColor = '';
+    longBreakButton.setAttribute('class', 'inactive');
     x.style.backgroundColor = "#0048bd";
+    x.setAttribute('class', 'active');
 }
 
 
