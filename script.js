@@ -7,6 +7,7 @@ const longBreakButton = document.querySelector("#longBreakButton");
 const timer = document.querySelector("#timer");
 const timerModes = document.querySelector("#timerModes");
 const alarm = document.querySelector("#alarm");
+const settings = document.querySelector("#settings");
 
 const pomoTime = [25]; 
 const shortBreakTime = [5];
