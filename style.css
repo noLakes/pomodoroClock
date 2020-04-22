@@ -94,12 +94,18 @@ p {
     height: 50px;
     font-size: 20pt;
     border: 1px solid black;
+    cursor: pointer;
 }
 
 #transportButtons button:hover {
-    
+    background-color: #cfcfcf;
 }
 
 #transportButtons button:active {
-    
+    background-color: #f7f0ab;
+    transform: translate(1px, 1px)
+}
+
+#alarm {
+    visibility: hidden;
 }

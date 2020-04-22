@@ -6,6 +6,7 @@ const shortBreakButton = document.querySelector("#shortBreakButton");
 const longBreakButton = document.querySelector("#longBreakButton");
 const timer = document.querySelector("#timer");
 const timerModes = document.querySelector("#timerModes");
+const alarm = document.querySelector("#alarm");
 
 const pomoTime = [25]; 
 const shortBreakTime = [5];
@@ -74,6 +75,7 @@ function timeToCount(min) {
         timerText(min, (d % timeStart));
         if ((d % timeStart) >= (min * 60000)) {
             clearTimer();
+            alarm.play();
         }
     }, 1000)
 }
@@ -105,9 +107,9 @@ function msToMinSec(ms) {
 }
 
 function setActive(x) {
-    pomoButton.style.backgroundColor = '#0096ff';
-    shortBreakButton.style.backgroundColor = '#0096ff';
-    longBreakButton.style.backgroundColor = '#0096ff';
+    pomoButton.style.backgroundColor = '';
+    shortBreakButton.style.backgroundColor = '';
+    longBreakButton.style.backgroundColor = '';
     x.style.backgroundColor = "#0048bd";
 }
 
